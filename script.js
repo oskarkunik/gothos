@@ -21,6 +21,7 @@ const decodeHtml = (line) => {
 
 filterSavedArticlesFromAllLines
   .then(lines => lines
+    .reverse() // Show last added at the top
     .map(line => {
       const splitBySpace = line.split(' ')
       const pageTitle = splitBySpace.slice(0, splitBySpace.length - 2).join(' ')
