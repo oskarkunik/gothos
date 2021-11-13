@@ -1,0 +1,14 @@
+[Unit]
+Description=Gothos website server
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+# lines below shold match the user and directory
+User=pi
+WorkingDirectory=/home/pi/gothos
+ExecStart=/bin/bash -c 'cd /home/pi/gothos/ && python3 -m http.server'
+
+[Install]
+WantedBy=multi-user.target
