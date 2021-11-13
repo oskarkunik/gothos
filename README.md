@@ -46,3 +46,5 @@ Gothos is meant to be served from an http server. In my case it's Python's built
 4. If the website can be accessed (by default on port 8000), enable the service:
 
 	`sudo systemctl enable gothos.service`
+
+5. Symlink or copy your todo.txt file into gothos directory
