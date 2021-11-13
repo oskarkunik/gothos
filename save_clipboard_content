@@ -1,0 +1,8 @@
+#!/bin/bash
+
+newtext=$(xclip -selection clipboard -o)
+filename='todo.txt'
+
+if [ "$newtext" != "" ]; then
+      printf "${newtext} +saved\n" >> $filename
+fi
