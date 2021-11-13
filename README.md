@@ -12,16 +12,16 @@ Gothos is meant to be served from an http server. In my case it's Python's built
 
 ## files
 
-.
-├── gothos.service	| systemd service file that should go to /etc/systemd/system
-├── index.html		| website to be served
-├── README.md		| this file
-├── script.js		| js to append href elements to index.html
-├── style.css		| basic stylesheet for index.html
-├── todo_parser.py	| python script that parses urls in todo.txt and gets page titles
-├── gothos_cron		| script to run as a cron job
-└── todo.txt		| example, to be replaced by a symlink to actual todo.txt
-
+| file 						| description 																										|
+| ---- 						| -----------																											|
+| gothos.service	| systemd service file that should go to /etc/systemd/system			|
+| index.html			| website to be served 																						|
+| README.md				| this file																												|
+| script.js				| js to append href elements to index.html												|
+| style.css				| basic stylesheet for index.html																	|
+| todo_parser.py	| python script that parses urls in todo.txt and gets page titles	|
+| gothos_cron			| script to run as a cron job																			|
+| todo.txt				| example, to be replaced by a symlink to actual todo.txt					|
 
 ## requirements
 
