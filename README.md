@@ -25,7 +25,7 @@ Gothos is meant to be served from an http server. In my case it's Python's built
 
 ## requirements
 
-- systemd (it comes with uUbuntu-based distros that I use),
+- systemd (it comes with ubuntu-based distros that I use),
 
 - python3 (I use its `http.server` module to serve the links site as well as to run the parsing script),
 
@@ -55,7 +55,7 @@ Gothos is meant to be served from an http server. In my case it's Python's built
 
 6. Modify the `file_path` in `todo_parser.py` to match your absolute path to todo.txt file
 
-7. Automate running `todo_parser.py`. I added `gothos_cron` (with `sudo chmod +x 777`) to `/etc/cron.hourly/`) with the following content:
+7. Automate running `todo_parser.py`. I added `gothos_cron` (with `sudo chmod +x 777`) to `/etc/cron.hourly/` with the following content:
 
 	```
 	#!/bin/bash
