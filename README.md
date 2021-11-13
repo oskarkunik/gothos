@@ -18,3 +18,31 @@ Gothos is meant to be served from an http server. In my case it's Python's built
 ├── style.css		| basic stylesheet for index.html
 ├── todo_parser.py	| python script that parses urls in todo.txt and gets page titles
 └── todo.txt		| example, to be replaced by a symlink to actual todo.txt
+
+## requirements
+
+- systemd (it comes with uUbuntu-based distros that I use),
+
+- python3 (I use its `http.server` module to serve the links site as well as to run the parsing script),
+
+- todo.txt file or another plain text file where links are saved/synced to.
+
+## installation
+
+1. Pull the entire project
+
+2. Modify `gothos.service` to match your system and path to `gothos` directory and place the file in `/etc/systemd/system`
+
+	`sudo cp gothos.service /etc/systemd/system/`
+
+3. Reload service files so that gothos can be started:
+
+	`sudo systemctl daemon-reload`
+
+4. Start the service:
+	
+	`sudo systemctl start gothos.service`
+
+4. If the website can be accessed (by default on port 8000), enable the service:
+
+	`sudo systemctl enable gothos.service`
