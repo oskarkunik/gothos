@@ -10,19 +10,23 @@ parsed_tag = '+parsed'
 
 # fetches actual website title
 def get_page_title(url, title_re=re.compile(r'<titl.+>(.*?)</title>', re.UNICODE )):
+    print("Parsing {}:".format(url))
     try:
         r = requests.get(url)
         r.raise_for_status()
-        if r.status_code == 200:
+        if r.status_code == 200 and r.text:
             match = title_re.search(r.text)
             if match:
+                print("found")
                 return match.group(1)
             return url
         return url
     except requests.exceptions.ConnectionError:
-        return 'ERROR PARSING URL'
-    finally:
-        print("--------\n")
+        print("error")
+        return url
+    except requests.exceptions.HTTPError:
+        print("error")
+        return url
 
 # extracts url from line
 def get_url(line):
