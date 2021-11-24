@@ -50,17 +50,20 @@ input_file = open(file_path, 'r')
 
 new_data = []
 
-# go through entire file, find links, parse unparsed
 for line in input_file:
+    new_data.append(line)
+
+current_line = 0
+# go through entire file, find links, parse unparsed
+for line in new_data:
     url = get_url(line)
     if(url and not is_url_parsed(line)):
         title = get_page_title(url)
         line = "{} {} {}\n".format(title.strip(), url.strip(), parsed_tag)
-    new_data.append(line)
+        new_data[current_line] = line
+        output_file = open(file_path, 'w')
+        output_file.writelines(new_data)
+        output_file.close()
+    current_line += 1
 
 input_file.close()
-
-# open the same file, for writing with parsed data
-output_file = open(file_path, 'w')
-output_file.writelines(new_data)
-output_file.close()
